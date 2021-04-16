@@ -62,6 +62,15 @@
             @foreach ($errors->all() as $error)
             <li>{{ $error }}</li>
             @endforeach
+            @if (session('login_error'))
+            <div class="alert alert-danger">
+            {{ session('login_error')}}
+            @endif
+
+            @if (session('logout'))
+            <div class="alert alert-danger">
+            {{ session('logout')}}
+            @endif
         </ul>
     </div>
     @endif
